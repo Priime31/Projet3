@@ -1,0 +1,21 @@
+{
+  "name": "text-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.scss",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Priime31/Projet3.git"
+  },
+  "author": "Arthur WILLEM",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/Priime31/Projet3/issues"
+  },
+  "homepage": "https://github.com/Priime31/Projet3#readme"
+}
