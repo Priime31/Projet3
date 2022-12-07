@@ -18,139 +18,200 @@
 @import "./pages/about";
 @import "./pages/project";
 
-.section{
-    &__function{
-        margin-bottom: 200px;
-    }
-    &__restaurant{
-        margin-top: 200px
-    }
-}
 
-.heading{
-
-    &__logo{
+header{
+    margin-bottom: 300px;
+    & img{
         margin: auto;
-        border-bottom: solid 4px $lightGrey;
-        display: flex;
-        justify-content: center;
-        padding: 25px;
+        padding-inline: 294px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        box-shadow: 0px 7px 10px 3px #c1c1c1;
     }
-    &__loca {
+    &>div{
         color: black;
+        background-color: $cloudy;
         display: flex;
-        font-size: 40px;
+        font-size: 50px;
         align-items: center;
         justify-content: center;
-        margin-top: 30px;
-            span{
+        padding-top: 30px;
+        padding-bottom: 30px;
+            &>span{
                 color: black;
                 padding-right: 30px;
             }
-            p{
-                padding-right: 70px;
+            &>p{
+                padding-right: 50px;
+                font-weight: bold;
+                color: $anthracite;
             }
     }
-    &__title{
+    &>h1{
         font-size: 50px;
         width: 500px;
         text-align: center;
         margin: auto;
         margin-top: 60px;
     }
-    &__subTitle{
+    &>p{
         color: #636363;
-        font-size: 18px;
+        font-size: 15px;
         margin-inline: 100px;
         margin-top: 30px;
-        margin-bottom: 130px;
+        margin-bottom: 80px;
         text-align: center;
     }
-    &__box{
-        margin-bottom: 280px;
-    }
-    &__box__button{
+    &>a{
+        display: block;
         border: solid 1px $lila;
         padding: 40px;
+        font-size: 19px;
         text-decoration: none;
         border-radius: 80px;
         color: white;
         background-color: $lila;
-        margin-inline: 180px;
+        margin-inline: 170px;
+        box-shadow: inset -10px -10px 20px 10px #a25bdc, 0px 5px 10px 0px $grey;
+        &:hover{
+            box-shadow: inset -10px -10px 20px 10px #a25bdc, 0px 5px 10px 0px $anthracite;
+        }
     }
 }
 
-.function{
-    &__title{
+article{
+    margin-inline: 5%;
+    font-size: 35px;
+    & h2{
         font-size: 50px;
         font-weight: bold;
         margin-bottom: 100px;
     }
-    &__rule{
-        display: flex;
-        align-items: center;
-        margin-bottom: 100px;
-        &__text{
-            margin-left: 50px;
-        }
-    }
-    &__number{
-        margin-right: 50px;
-        padding: 12px;
-        padding-inline: 22px;
-        background-color: $lavande;
-        color: white;
-        border-radius: 50px;
-        p{
-            width: 20px;
+    &>ul{
+        &>li{
+            display: flex;
+            align-items: center;
+            margin-bottom: 100px;
+            &>p{
+                margin-right: 50px;
+                padding: 12px;
+                padding-inline: 22px;
+                background-color: $lavande;
+                color: white;
+                border-radius: 50px;
+                position: absolute;
+            }
+            &>div{
+                display: flex;
+                border-radius: 30px;
+                box-shadow: 0px 10px 20px 5px $box-shadow;
+                margin-left: 45px;
+                padding-right: 250px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                &>span{
+                    padding-left: 70px;
+                    padding-right: 50px;
+                    color: $grey;
+                }
+                &>p{
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
 
-#last__icon{
+.fa-store{
     color: $lavande;
 }
 
-.restaurant__title{
-    font-size: 50px;
-    font-weight: bold;
-}
-
-.card{
-    max-width: 90%;
-    width: auto;
-    height: 600px;
-    &__enchantee{
-        max-width: 90%;
-        width: auto;
-        height: 600px;
-        overflow: hidden;
+main{
+    margin-inline: 5%;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    &>h2{
+        font-size: 50px;
+        font-weight: bold;
     }
-    &__image{
-        width:900px;
-        height:450px;
-        border-radius: 30px 30px 0px 0px;
-        &__enchantee{
-            width: 900px;
-            height: auto;
+    &>figure{
+        box-shadow: 0px 10px 20px 5px $box-shadow;
+        width: auto;
+        height: 500px;
+        border-radius: 30px;
+        position: relative;
+        margin-bottom: 50px;
+        & img{
+            width: 100%;
+            height: 350px;
             border-radius: 30px 30px 0px 0px;
             object-fit: cover;
         }
+        &>a{
+            color: black;
+        }
+        &>a>span{
+            position: absolute;
+            right: 30px;
+            padding-inline: 15px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            color: $chloro;
+            background-color: $mint;
+            border-radius: 5px;
+            font-weight: bold;
+            width: 150px;
+            margin-top: 30px;
+        }
+        & figcaption{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            align-items: center;
+            font-weight:normal;
+            & span{
+                font-weight: bold;
+                font-size: 40px;
+            }
+            & h3{
+                padding-left: 30px;
+                font-size: 35px;
+            }
+            & p{
+                padding-left: 30px;
+            }        
+        }
     }
-    &__new{
-        position: absolute;
-        left: 740px;
-        padding-inline: 15px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        color: $chloro;
-        background-color: $mint;
-        border-radius: 5px;
-        font-weight: bold;
-        width: 150px;
-        margin-top: 30px;
+}
+
+.fa-heart{
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $deepgrey;
+    font-size: 40px;
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &>img{
+        filter: invert(100%);
+        width: 250px;
+        padding-top: 20px;
+        padding-bottom: 50px;
     }
-    &__info{
+    &>a{
         display: flex;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 15px;
+        &>span{
+            margin-right: 40px;
+            width: 20px;
+        }
     }
 }
