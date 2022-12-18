@@ -41,7 +41,11 @@ header{
                 color: black;
                 padding-right: 30px;
             }
-            &>p{
+            &>input{
+                font-size: 30px;
+                width: 250px;
+                height: 50px;
+                border: none;
                 padding-right: 50px;
                 font-weight: bold;
                 color: $anthracite;
@@ -63,9 +67,10 @@ header{
         text-align: center;
     }
     &>a{
+        cursor: pointer;
         display: block;
         border: solid 1px $lila;
-        padding: 40px;
+        padding: 50px;
         font-size: 19px;
         text-decoration: none;
         border-radius: 80px;
@@ -92,7 +97,7 @@ article{
             display: flex;
             align-items: center;
             margin-bottom: 100px;
-            &>p{
+            &>span{
                 margin-right: 50px;
                 padding: 12px;
                 padding-inline: 22px;
@@ -140,7 +145,32 @@ main{
         height: 500px;
         border-radius: 30px;
         position: relative;
+        z-index: 1;
         margin-bottom: 50px;
+        &>span{
+            font-size: 50px;
+            position: relative;
+            z-index: 2;
+            bottom: 100px;
+            left: 750px;
+            &::after{
+                content: "";
+                background-clip: $lavande;
+                font-size: 5px;
+                position: absolute;
+                opacity: 0;
+                transition: all .5s ease-in-out;
+            }
+            &:hover::after{
+                content: "";
+                font-size: 50px;
+                opacity: 1;
+            }
+            &:focus{
+                color: $lavande;
+                background-color: $lavande;
+            }
+        }
         & img{
             width: 100%;
             height: 350px;
@@ -164,11 +194,8 @@ main{
             margin-top: 30px;
         }
         & figcaption{
-            display: flex;
-            justify-content: space-between;
             padding-top: 30px;
             padding-bottom: 30px;
-            align-items: center;
             font-weight:normal;
             & span{
                 font-weight: bold;
@@ -185,10 +212,7 @@ main{
     }
 }
 
-.fa-heart{
-    padding-right: 50px;
-    padding-bottom: 10px;
-}
+
 
 footer{
     display: flex;

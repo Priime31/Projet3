@@ -65,6 +65,32 @@ figure {
   margin-inline-end: 0;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  font-size: 40px;
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+footer > img {
+  filter: invert(100%);
+  width: 250px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+footer > a {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+footer > a > span {
+  margin-right: 40px;
+  width: 20px;
+}
+
 header {
   margin-bottom: 300px;
 }
@@ -89,7 +115,11 @@ header > div > span {
   color: black;
   padding-right: 30px;
 }
-header > div > p {
+header > div > input {
+  font-size: 30px;
+  width: 250px;
+  height: 50px;
+  border: none;
   padding-right: 50px;
   font-weight: bold;
   color: #313131;
@@ -112,7 +142,7 @@ header > p {
 header > a {
   display: block;
   border: solid 1px #db6dda;
-  padding: 40px;
+  padding: 50px;
   font-size: 19px;
   text-decoration: none;
   border-radius: 80px;
@@ -139,7 +169,7 @@ article > ul > li {
   align-items: center;
   margin-bottom: 100px;
 }
-article > ul > li > p {
+article > ul > li > span {
   margin-right: 50px;
   padding: 12px;
   padding-inline: 22px;
@@ -185,7 +215,32 @@ main > figure {
   height: 500px;
   border-radius: 30px;
   position: relative;
+  z-index: 1;
   margin-bottom: 50px;
+}
+main > figure > span {
+  font-size: 50px;
+  position: relative;
+  z-index: 2;
+  bottom: 100px;
+  left: 750px;
+}
+main > figure > span::after {
+  content: "";
+  background-clip: #a25bdc;
+  font-size: 5px;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+main > figure > span:hover::after {
+  content: "";
+  font-size: 50px;
+  opacity: 1;
+}
+main > figure > span:focus {
+  color: #a25bdc;
+  background-color: #a25bdc;
 }
 main > figure img {
   width: 100%;
@@ -210,11 +265,8 @@ main > figure > a > span {
   margin-top: 30px;
 }
 main > figure figcaption {
-  display: flex;
-  justify-content: space-between;
   padding-top: 30px;
   padding-bottom: 30px;
-  align-items: center;
   font-weight: normal;
 }
 main > figure figcaption span {
@@ -227,11 +279,6 @@ main > figure figcaption h3 {
 }
 main > figure figcaption p {
   padding-left: 30px;
-}
-
-.fa-heart {
-  padding-right: 50px;
-  padding-bottom: 10px;
 }
 
 footer {
