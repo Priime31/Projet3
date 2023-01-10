@@ -32,3 +32,12 @@
     -webkit-text-stroke: 2px $lavande;
 	}
 }
+
+@keyframes checked{
+  0%{
+    margin-right: -42px;
+  }
+  100%{
+    margin-right: 0px;
+  }
+}

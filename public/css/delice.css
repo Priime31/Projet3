@@ -31,6 +31,14 @@
     -webkit-text-stroke: 2px #a25bdc;
   }
 }
+@keyframes checked {
+  0% {
+    margin-right: -42px;
+  }
+  100% {
+    margin-right: 0px;
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -44,6 +52,7 @@ h1 {
 }
 
 h2 {
+  font-size: 20px;
   display: block;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -77,10 +86,6 @@ p {
   margin-block-end: 0;
 }
 
-span {
-  font-size: 40px;
-}
-
 a {
   display: block;
 }
@@ -102,48 +107,47 @@ footer {
   display: flex;
   flex-direction: column;
   background-color: #353535;
-  font-size: 40px;
-  padding-left: 50px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  font-size: 12px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 footer > img {
   filter: invert(100%);
-  width: 250px;
-  padding-top: 20px;
-  padding-bottom: 50px;
+  width: 80px;
+  padding-bottom: 20px;
 }
 footer > a {
   display: flex;
   color: white;
   text-decoration: none;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 footer > a > span {
-  margin-right: 40px;
-  width: 20px;
+  margin-right: 5px;
+  font-size: 10px;
 }
 
 header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  height: 700px;
+  height: 215px;
 }
 header > a {
   cursor: pointer;
-  margin: 50px 200px 50px 50px;
+  margin: 10px 20px 10px 20px;
 }
 header > a > span {
-  font-size: 50px;
+  font-size: 12px;
   color: #313131;
 }
 header > :nth-child(2) {
-  width: 400px;
-  height: 70px;
+  width: 110px;
+  padding: 10px 0 10px 50px;
 }
 header > :nth-child(3) {
-  width: 980px;
+  width: 320px;
   height: auto;
   object-fit: cover;
   position: relative;
@@ -153,17 +157,16 @@ header > :nth-child(3) {
 main {
   background-color: white;
   position: relative;
-  padding: 70px 5% 70px 5%;
-  border-radius: 100px 100px 0 0;
+  padding: 20px 10px;
+  border-radius: 30px 30px 0 0;
 }
 main > h1 {
   font-family: "Shrikhand";
-  font-size: 70px;
-  padding-bottom: 50px;
+  margin-top: 0;
+  font-size: 24px;
 }
 main > h1 > span {
-  padding-left: 100px;
-  font-size: 60px;
+  padding-left: 30px;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -178,39 +181,38 @@ main > h1 > span:hover {
 main > :nth-child(2) > h2 {
   text-transform: uppercase;
   color: #424242;
-  font-size: 40px;
-  margin-bottom: 60px;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: fit-content;
   position: relative;
   display: block;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   opacity: 0;
   animation: h2 0.6s linear forwards;
 }
 main > :nth-child(2) > h2::before {
   content: "";
   position: absolute;
-  width: 85px;
+  width: 40px;
   left: 0;
   bottom: 0;
-  border-bottom: 5px solid #99e2d0;
+  border-bottom: 3px solid #99e2d0;
 }
 main > :nth-child(2) > ul {
   list-style: none;
-  padding-inline: 20px;
 }
 main > :nth-child(2) > ul > li {
   display: flex;
+  align-items: center;
   cursor: pointer;
-  justify-content: space-between;
-  font-size: 30px;
-  border-radius: 30px;
-  box-shadow: 0px 10px 20px 5px #dddddd;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  margin-bottom: 40px;
+  font-size: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
   opacity: 0;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  box-shadow: 0px 5px 20px 0px #dddddd;
 }
 main > :nth-child(2) > ul > li:nth-child(1) {
   animation: li 0.6s 0.2s linear forwards;
@@ -221,53 +223,87 @@ main > :nth-child(2) > ul > li:nth-child(2) {
 main > :nth-child(2) > ul > li:nth-child(3) {
   animation: li 0.6s 0.6s linear forwards;
 }
-main > :nth-child(2) > ul > li > span {
-  font-weight: 700;
-  font-size: 30px;
-  padding-top: 45px;
-  padding-right: 40px;
+main > :nth-child(2) > ul > li > div:nth-child(1) {
+  width: 100%;
+  padding: 10px 30px 10px 20px;
 }
-main > :nth-child(2) > ul > li > p > span {
+main > :nth-child(2) > ul > li > div:nth-child(1) > h3 {
   font-weight: 700;
-  font-size: 40px;
+}
+main > :nth-child(2) > ul > li > div:nth-child(1) > div {
+  display: flex;
+  justify-content: space-between;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+main > :nth-child(2) > ul > li > div:nth-child(1) > div > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+main > :nth-child(2) > ul > li > div:nth-child(1) > div > span {
+  font-weight: 700;
+}
+main > :nth-child(2) > ul > li > div:nth-child(2) {
+  margin-right: -42px;
+  background-color: #99e2d0;
+  display: flex;
+  padding: 15px 10px 15px 10px;
+  border-radius: 0 10px 10px 0;
+}
+main > :nth-child(2) > ul > li > div:nth-child(2) > span {
+  transform: rotate(-180deg);
+  align-self: center;
+  background-color: white;
+  color: #99e2d0;
+  border-radius: 30px;
+  padding: 5px;
+}
+main > :nth-child(2) > ul > li:hover {
+  transition: all 1s ease;
+}
+main > :nth-child(2) > ul > li:hover > div:nth-child(2) {
+  animation: checked 1s ease forwards;
+}
+main > :nth-child(2) > ul > li:hover > div:nth-child(2) > span {
+  transform: rotate(0);
+  transition-duration: 0.8s;
 }
 main > :nth-child(3) > h2 {
   text-transform: uppercase;
   color: #424242;
-  font-size: 40px;
-  margin-bottom: 60px;
-  padding-top: 60px;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: fit-content;
   position: relative;
   display: block;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   opacity: 0;
   animation: h2 0.6s linear forwards;
 }
 main > :nth-child(3) > h2::before {
   content: "";
   position: absolute;
-  width: 85px;
+  width: 40px;
   left: 0;
   bottom: 0;
-  border-bottom: 5px solid #99e2d0;
+  border-bottom: 3px solid #99e2d0;
 }
 main > :nth-child(3) > ul {
   list-style: none;
-  padding-inline: 20px;
 }
 main > :nth-child(3) > ul > li {
   display: flex;
+  align-items: center;
   cursor: pointer;
-  justify-content: space-between;
-  font-size: 30px;
-  border-radius: 30px;
-  box-shadow: 0px 10px 20px 5px #dddddd;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  margin-bottom: 40px;
+  font-size: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
   opacity: 0;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  box-shadow: 0px 5px 20px 0px #dddddd;
 }
 main > :nth-child(3) > ul > li:nth-child(1) {
   animation: li 0.6s 0.2s linear forwards;
@@ -278,53 +314,87 @@ main > :nth-child(3) > ul > li:nth-child(2) {
 main > :nth-child(3) > ul > li:nth-child(3) {
   animation: li 0.6s 0.6s linear forwards;
 }
-main > :nth-child(3) > ul > li > span {
-  font-weight: 700;
-  font-size: 30px;
-  padding-top: 45px;
-  padding-right: 40px;
+main > :nth-child(3) > ul > li > div:nth-child(1) {
+  width: 100%;
+  padding: 10px 30px 10px 20px;
 }
-main > :nth-child(3) > ul > li > p > span {
+main > :nth-child(3) > ul > li > div:nth-child(1) > h3 {
   font-weight: 700;
-  font-size: 40px;
+}
+main > :nth-child(3) > ul > li > div:nth-child(1) > div {
+  display: flex;
+  justify-content: space-between;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+main > :nth-child(3) > ul > li > div:nth-child(1) > div > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+main > :nth-child(3) > ul > li > div:nth-child(1) > div > span {
+  font-weight: 700;
+}
+main > :nth-child(3) > ul > li > div:nth-child(2) {
+  margin-right: -42px;
+  background-color: #99e2d0;
+  display: flex;
+  padding: 15px 10px 15px 10px;
+  border-radius: 0 10px 10px 0;
+}
+main > :nth-child(3) > ul > li > div:nth-child(2) > span {
+  transform: rotate(-180deg);
+  align-self: center;
+  background-color: white;
+  color: #99e2d0;
+  border-radius: 30px;
+  padding: 5px;
+}
+main > :nth-child(3) > ul > li:hover {
+  transition: all 1s ease;
+}
+main > :nth-child(3) > ul > li:hover > div:nth-child(2) {
+  animation: checked 1s ease forwards;
+}
+main > :nth-child(3) > ul > li:hover > div:nth-child(2) > span {
+  transform: rotate(0);
+  transition-duration: 0.8s;
 }
 main > :nth-child(4) > h2 {
   text-transform: uppercase;
   color: #424242;
-  font-size: 40px;
-  margin-bottom: 60px;
-  padding-top: 60px;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: fit-content;
   position: relative;
   display: block;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   opacity: 0;
   animation: h2 0.6s linear forwards;
 }
 main > :nth-child(4) > h2::before {
   content: "";
   position: absolute;
-  width: 85px;
+  width: 40px;
   left: 0;
   bottom: 0;
-  border-bottom: 5px solid #99e2d0;
+  border-bottom: 3px solid #99e2d0;
 }
 main > :nth-child(4) > ul {
   list-style: none;
-  padding-inline: 20px;
 }
 main > :nth-child(4) > ul > li {
   display: flex;
+  align-items: center;
   cursor: pointer;
-  justify-content: space-between;
-  font-size: 30px;
-  border-radius: 30px;
-  box-shadow: 0px 10px 20px 5px #dddddd;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  margin-bottom: 40px;
+  font-size: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
   opacity: 0;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  box-shadow: 0px 5px 20px 0px #dddddd;
 }
 main > :nth-child(4) > ul > li:nth-child(1) {
   animation: li 0.6s 0.2s linear forwards;
@@ -335,29 +405,68 @@ main > :nth-child(4) > ul > li:nth-child(2) {
 main > :nth-child(4) > ul > li:nth-child(3) {
   animation: li 0.6s 0.6s linear forwards;
 }
-main > :nth-child(4) > ul > li > span {
-  font-weight: 700;
-  font-size: 30px;
-  padding-top: 45px;
-  padding-right: 40px;
+main > :nth-child(4) > ul > li > div:nth-child(1) {
+  width: 100%;
+  padding: 10px 30px 10px 20px;
 }
-main > :nth-child(4) > ul > li > p > span {
+main > :nth-child(4) > ul > li > div:nth-child(1) > h3 {
   font-weight: 700;
-  font-size: 40px;
+}
+main > :nth-child(4) > ul > li > div:nth-child(1) > div {
+  display: flex;
+  justify-content: space-between;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+main > :nth-child(4) > ul > li > div:nth-child(1) > div > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+main > :nth-child(4) > ul > li > div:nth-child(1) > div > span {
+  font-weight: 700;
+}
+main > :nth-child(4) > ul > li > div:nth-child(2) {
+  margin-right: -42px;
+  background-color: #99e2d0;
+  display: flex;
+  padding: 15px 10px 15px 10px;
+  border-radius: 0 10px 10px 0;
+}
+main > :nth-child(4) > ul > li > div:nth-child(2) > span {
+  transform: rotate(-180deg);
+  align-self: center;
+  background-color: white;
+  color: #99e2d0;
+  border-radius: 30px;
+  padding: 5px;
+}
+main > :nth-child(4) > ul > li:hover {
+  transition: all 1s ease;
+}
+main > :nth-child(4) > ul > li:hover > div:nth-child(2) {
+  animation: checked 1s ease forwards;
+}
+main > :nth-child(4) > ul > li:hover > div:nth-child(2) > span {
+  transform: rotate(0);
+  transition-duration: 0.8s;
 }
 main > a {
   cursor: pointer;
+  width: 110px;
   display: block;
   border: solid 1px #db6dda;
-  margin-top: 150px;
-  margin-bottom: 30px;
-  padding: 50px;
-  font-size: 42px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 15px;
+  font-size: 12px;
+  text-align: center;
   text-decoration: none;
-  border-radius: 80px;
+  border-radius: 30px;
   color: white;
   background-color: #db6dda;
-  margin-inline: 170px;
+  margin-inline: px;
   box-shadow: inset -10px -10px 20px 10px #a25bdc, 0px 5px 10px 0px #424242;
 }
 main > a:hover {
