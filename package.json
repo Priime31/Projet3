@@ -4,16 +4,16 @@
   "description": "",
   "main": "main.scss",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
-    "sass2": "sass --watch ./sass/palette.scss:./public/css/palette.css",
-    "sass3": "sass --watch ./sass/delice.scss:./public/css/delice.css",
-    "sass4": "sass --watch ./sass/francaise.scss:./public/css/francaise.css",
-    "sass5": "sass --watch ./sass/enchantee.scss:./public/css/enchantee.css",
-    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/style.css",
-    "prefix2": "postcss ./public/css/palette.css --use autoprefixer -d ./public/css/prefixed/palette.css",
-    "prefix3": "postcss ./public/css/delice.css --use autoprefixer -d ./public/css/prefixed/delice.css",
-    "prefix4": "postcss ./public/css/francaise.css --use autoprefixer -d ./public/css/prefixed/francaise.css",
-    "prefix5": "postcss ./public/css/enchantee.css --use autoprefixer -d ./public/css/prefixed/enchantee.css"
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed",
+    "sass2": "sass --watch ./sass/palette.scss:./public/css/palette.css --style compressed",
+    "sass3": "sass --watch ./sass/delice.scss:./public/css/delice.css --style compressed",
+    "sass4": "sass --watch ./sass/francaise.scss:./public/css/francaise.css --style compressed",
+    "sass5": "sass --watch ./sass/enchantee.scss:./public/css/enchantee.css --style compressed",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed",
+    "prefix2": "postcss ./public/css/palette.css --use autoprefixer -d ./public/css/prefixed",
+    "prefix3": "postcss ./public/css/delice.css --use autoprefixer -d ./public/css/prefixed",
+    "prefix4": "postcss ./public/css/francaise.css --use autoprefixer -d ./public/css/prefixed",
+    "prefix5": "postcss ./public/css/enchantee.css --use autoprefixer -d ./public/css/prefixed"
   },
   "repository": {
     "type": "git",
