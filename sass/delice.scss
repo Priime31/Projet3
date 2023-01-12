@@ -26,6 +26,7 @@ header{
     flex-wrap: wrap;
     align-items: center;
     height: 215px;
+    max-width: 320px;
     &>a{
         cursor: pointer;
         margin: 10px 20px 10px 20px;
@@ -96,6 +97,9 @@ main{
             list-style: none;
             &>li{
                 display: flex;
+                width: 100%;
+                height: 50px;
+                justify-content: space-between;
                 align-items: center;
                 cursor: pointer;
                 font-size: 12px;
@@ -103,7 +107,6 @@ main{
                 margin-bottom: 10px;
                 opacity: 0;
                 overflow: hidden;
-                flex-wrap: nowrap;
                 box-shadow: 0px 5px 20px 0px $box-shadow;
                 &:nth-child(1){
                     animation: li .6s .2s linear forwards;
@@ -115,48 +118,62 @@ main{
                     animation: li .6s .6s linear forwards;
                 }
                 &>div:nth-child(1){
-                    width: 100%;
-                    padding: 10px 30px 10px 20px;
+                    padding-left: 15px;
+                    overflow: hidden;
+                    width: 90%;
                     &>h3{
                         font-weight: 700;
-                    }
-                    &>div{
-                        display: flex;
-                        justify-content: space-between;
                         text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;
-                        &>p{
-                            text-overflow: ellipsis;
-                            overflow: hidden;
-                        }
-                        &>span{
-                            font-weight: 700;
-                        }
+                        width: 100%;
+                    }
+                    &>p{
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        width: 100%;
                     }
                 }
                 &>div:nth-child(2){
-                    margin-right: -42px;
-                    background-color: $mint;
                     display: flex;
-                    padding: 15px 10px 15px 10px;
-                    border-radius: 0 10px 10px 0;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
                     &>span{
-                        transform: rotate(-180deg);
-                        align-self: center;
-                        background-color: white;
-                        color: $mint;
-                        border-radius: 30px;
-                        padding: 5px;
+                        font-weight: 700;
+                        display: block;
+                        margin: auto;
+                        padding: 18px 15px 0 15px;
+
+                    }
+                    &>div{
+                        display: flex;
+                        background-color: $mint;
+                        width: 0;
+                        height: 100%;
+                        text-align: center;
+                        &>span{
+                            transform: rotate(-180deg);
+                            background-color: white;
+                            color: $mint;
+                            border-radius: 30px;
+                            padding: 5px;
+                            align-self: center;
+                            margin: auto;
+                        }
                     }
                 }
                 &:hover{
                     transition: all 1s ease;
                     &>div:nth-child(2){
-                        animation: checked 1s ease forwards;
-                        &>span{
-                            transform: rotate(0);
-                            transition-duration: .8s;
+                        &>div{
+                            width: 40px;
+                            transition-duration: 1s;
+                            &>span{
+                                transform: rotate(0);
+                                transition-duration: .8s;
+                            }
                         }
                     }
                 }
@@ -189,6 +206,9 @@ main{
             list-style: none;
             &>li{
                 display: flex;
+                width: 100%;
+                height: 50px;
+                justify-content: space-between;
                 align-items: center;
                 cursor: pointer;
                 font-size: 12px;
@@ -196,7 +216,6 @@ main{
                 margin-bottom: 10px;
                 opacity: 0;
                 overflow: hidden;
-                flex-wrap: nowrap;
                 box-shadow: 0px 5px 20px 0px $box-shadow;
                 &:nth-child(1){
                     animation: li .6s .2s linear forwards;
@@ -208,48 +227,62 @@ main{
                     animation: li .6s .6s linear forwards;
                 }
                 &>div:nth-child(1){
-                    width: 100%;
-                    padding: 10px 30px 10px 20px;
+                    padding-left: 15px;
+                    overflow: hidden;
+                    width: 90%;
                     &>h3{
                         font-weight: 700;
-                    }
-                    &>div{
-                        display: flex;
-                        justify-content: space-between;
                         text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;
-                        &>p{
-                            text-overflow: ellipsis;
-                            overflow: hidden;
-                        }
-                        &>span{
-                            font-weight: 700;
-                        }
+                        width: 100%;
+                    }
+                    &>p{
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        width: 100%;
                     }
                 }
                 &>div:nth-child(2){
-                    margin-right: -42px;
-                    background-color: $mint;
                     display: flex;
-                    padding: 15px 10px 15px 10px;
-                    border-radius: 0 10px 10px 0;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
                     &>span{
-                        transform: rotate(-180deg);
-                        align-self: center;
-                        background-color: white;
-                        color: $mint;
-                        border-radius: 30px;
-                        padding: 5px;
+                        font-weight: 700;
+                        display: block;
+                        margin: auto;
+                        padding: 18px 15px 0 15px;
+
+                    }
+                    &>div{
+                        display: flex;
+                        background-color: $mint;
+                        width: 0;
+                        height: 100%;
+                        text-align: center;
+                        &>span{
+                            transform: rotate(-180deg);
+                            background-color: white;
+                            color: $mint;
+                            border-radius: 30px;
+                            padding: 5px;
+                            align-self: center;
+                            margin: auto;
+                        }
                     }
                 }
                 &:hover{
                     transition: all 1s ease;
                     &>div:nth-child(2){
-                        animation: checked 1s ease forwards;
-                        &>span{
-                            transform: rotate(0);
-                            transition-duration: .8s;
+                        &>div{
+                            width: 40px;
+                            transition-duration: 1s;
+                            &>span{
+                                transform: rotate(0);
+                                transition-duration: .8s;
+                            }
                         }
                     }
                 }
@@ -282,6 +315,9 @@ main{
             list-style: none;
             &>li{
                 display: flex;
+                width: 100%;
+                height: 50px;
+                justify-content: space-between;
                 align-items: center;
                 cursor: pointer;
                 font-size: 12px;
@@ -289,7 +325,6 @@ main{
                 margin-bottom: 10px;
                 opacity: 0;
                 overflow: hidden;
-                flex-wrap: nowrap;
                 box-shadow: 0px 5px 20px 0px $box-shadow;
                 &:nth-child(1){
                     animation: li .6s .2s linear forwards;
@@ -301,48 +336,62 @@ main{
                     animation: li .6s .6s linear forwards;
                 }
                 &>div:nth-child(1){
-                    width: 100%;
-                    padding: 10px 30px 10px 20px;
+                    padding-left: 15px;
+                    overflow: hidden;
+                    width: 90%;
                     &>h3{
                         font-weight: 700;
-                    }
-                    &>div{
-                        display: flex;
-                        justify-content: space-between;
                         text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;
-                        &>p{
-                            text-overflow: ellipsis;
-                            overflow: hidden;
-                        }
-                        &>span{
-                            font-weight: 700;
-                        }
+                        width: 100%;
+                    }
+                    &>p{
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        width: 100%;
                     }
                 }
                 &>div:nth-child(2){
-                    margin-right: -42px;
-                    background-color: $mint;
                     display: flex;
-                    padding: 15px 10px 15px 10px;
-                    border-radius: 0 10px 10px 0;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
                     &>span{
-                        transform: rotate(-180deg);
-                        align-self: center;
-                        background-color: white;
-                        color: $mint;
-                        border-radius: 30px;
-                        padding: 5px;
+                        font-weight: 700;
+                        display: block;
+                        margin: auto;
+                        padding: 18px 15px 0 15px;
+
+                    }
+                    &>div{
+                        display: flex;
+                        background-color: $mint;
+                        width: 0;
+                        height: 100%;
+                        text-align: center;
+                        &>span{
+                            transform: rotate(-180deg);
+                            background-color: white;
+                            color: $mint;
+                            border-radius: 30px;
+                            padding: 5px;
+                            align-self: center;
+                            margin: auto;
+                        }
                     }
                 }
                 &:hover{
                     transition: all 1s ease;
                     &>div:nth-child(2){
-                        animation: checked 1s ease forwards;
-                        &>span{
-                            transform: rotate(0);
-                            transition-duration: .8s;
+                        &>div{
+                            width: 40px;
+                            transition-duration: 1s;
+                            &>span{
+                                transform: rotate(0);
+                                transition-duration: .8s;
+                            }
                         }
                     }
                 }
@@ -371,4 +420,83 @@ main{
             box-shadow: inset -10px -10px 20px 10px #a25bdc, 0px 5px 10px 0px $anthracite;
         }
     }
+}
+
+@media screen and (min-width: 768px){
+
+    header{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 200px;
+        max-width: 768px;
+        &>:nth-child(2){
+            padding-left: 280px;
+        }
+        &>:nth-child(3){
+            width: 768px;
+            height: 200px;
+        }
+    }
+
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 768px;
+        &>h1{
+            display: flex;
+            justify-content: space-between;
+            margin-inline: 20px;
+            width: 710px;
+        }
+        &>section{
+            width: 245px;
+        }
+        &>a{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    footer{
+        max-width: 768px;
+    }
+
+}
+
+@media screen and (min-width: 1440px){
+
+    header{
+        max-width: 1440px;
+        height: 300px;
+        &>:nth-child(2){
+            padding-left: 600px;
+        }
+        &>:nth-child(3){
+            width: 1440px;
+            height: 300px;
+        }
+    }
+
+    main{
+        max-width: 1440px;
+        &>h1{
+            width: 100%;
+            align-items: center;
+            &>span{
+                padding-right: 1100px;
+                padding-left: 0;
+            }
+        }
+        &>section{
+            width: 400px;
+            margin: auto;
+            margin-right: 50px;
+        }
+    }
+
+    footer{
+        max-width: 1440px;
+    }
+
 }

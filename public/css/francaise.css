@@ -39,6 +39,50 @@
     margin-right: 0px;
   }
 }
+@keyframes loader1 {
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes loader2 {
+  from {
+    border-top: 5px solid #a25bdc;
+    border-bottom: 5px solid #a25bdc;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+  to {
+    transform: rotate(1440deg);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #a25bdc;
+    border-left: 5px solid #a25bdc;
+  }
+}
+.loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: #ffffff;
+  height: 100vh;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.9;
+  animation: loader1 200ms 3s forwards;
+}
+.loader::after {
+  content: "";
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border-top: 5px solid #a25bdc;
+  border-bottom: 5px solid #a25bdc;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  animation: loader2 3s linear infinite;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -133,6 +177,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   height: 215px;
+  max-width: 320px;
 }
 header > a {
   cursor: pointer;
@@ -204,6 +249,9 @@ main > :nth-child(2) > ul {
 }
 main > :nth-child(2) > ul > li {
   display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
   font-size: 12px;
@@ -211,7 +259,6 @@ main > :nth-child(2) > ul > li {
   margin-bottom: 10px;
   opacity: 0;
   overflow: hidden;
-  flex-wrap: nowrap;
   box-shadow: 0px 5px 20px 0px #dddddd;
 }
 main > :nth-child(2) > ul > li:nth-child(1) {
@@ -224,48 +271,59 @@ main > :nth-child(2) > ul > li:nth-child(3) {
   animation: li 0.6s 0.6s linear forwards;
 }
 main > :nth-child(2) > ul > li > div:nth-child(1) {
-  width: 100%;
-  padding: 10px 30px 10px 20px;
+  padding-left: 15px;
+  overflow: hidden;
+  width: 90%;
 }
 main > :nth-child(2) > ul > li > div:nth-child(1) > h3 {
   font-weight: 700;
-}
-main > :nth-child(2) > ul > li > div:nth-child(1) > div {
-  display: flex;
-  justify-content: space-between;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  width: 100%;
 }
-main > :nth-child(2) > ul > li > div:nth-child(1) > div > p {
+main > :nth-child(2) > ul > li > div:nth-child(1) > p {
   text-overflow: ellipsis;
   overflow: hidden;
-}
-main > :nth-child(2) > ul > li > div:nth-child(1) > div > span {
-  font-weight: 700;
+  white-space: nowrap;
+  width: 100%;
 }
 main > :nth-child(2) > ul > li > div:nth-child(2) {
-  margin-right: -42px;
-  background-color: #99e2d0;
   display: flex;
-  padding: 15px 10px 15px 10px;
-  border-radius: 0 10px 10px 0;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 main > :nth-child(2) > ul > li > div:nth-child(2) > span {
+  font-weight: 700;
+  display: block;
+  margin: auto;
+  padding: 18px 15px 0 15px;
+}
+main > :nth-child(2) > ul > li > div:nth-child(2) > div {
+  display: flex;
+  background-color: #99e2d0;
+  width: 0;
+  height: 100%;
+  text-align: center;
+}
+main > :nth-child(2) > ul > li > div:nth-child(2) > div > span {
   transform: rotate(-180deg);
-  align-self: center;
   background-color: white;
   color: #99e2d0;
   border-radius: 30px;
   padding: 5px;
+  align-self: center;
+  margin: auto;
 }
 main > :nth-child(2) > ul > li:hover {
   transition: all 1s ease;
 }
-main > :nth-child(2) > ul > li:hover > div:nth-child(2) {
-  animation: checked 1s ease forwards;
+main > :nth-child(2) > ul > li:hover > div:nth-child(2) > div {
+  width: 40px;
+  transition-duration: 1s;
 }
-main > :nth-child(2) > ul > li:hover > div:nth-child(2) > span {
+main > :nth-child(2) > ul > li:hover > div:nth-child(2) > div > span {
   transform: rotate(0);
   transition-duration: 0.8s;
 }
@@ -295,6 +353,9 @@ main > :nth-child(3) > ul {
 }
 main > :nth-child(3) > ul > li {
   display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
   font-size: 12px;
@@ -302,7 +363,6 @@ main > :nth-child(3) > ul > li {
   margin-bottom: 10px;
   opacity: 0;
   overflow: hidden;
-  flex-wrap: nowrap;
   box-shadow: 0px 5px 20px 0px #dddddd;
 }
 main > :nth-child(3) > ul > li:nth-child(1) {
@@ -315,48 +375,59 @@ main > :nth-child(3) > ul > li:nth-child(3) {
   animation: li 0.6s 0.6s linear forwards;
 }
 main > :nth-child(3) > ul > li > div:nth-child(1) {
-  width: 100%;
-  padding: 10px 30px 10px 20px;
+  padding-left: 15px;
+  overflow: hidden;
+  width: 90%;
 }
 main > :nth-child(3) > ul > li > div:nth-child(1) > h3 {
   font-weight: 700;
-}
-main > :nth-child(3) > ul > li > div:nth-child(1) > div {
-  display: flex;
-  justify-content: space-between;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  width: 100%;
 }
-main > :nth-child(3) > ul > li > div:nth-child(1) > div > p {
+main > :nth-child(3) > ul > li > div:nth-child(1) > p {
   text-overflow: ellipsis;
   overflow: hidden;
-}
-main > :nth-child(3) > ul > li > div:nth-child(1) > div > span {
-  font-weight: 700;
+  white-space: nowrap;
+  width: 100%;
 }
 main > :nth-child(3) > ul > li > div:nth-child(2) {
-  margin-right: -42px;
-  background-color: #99e2d0;
   display: flex;
-  padding: 15px 10px 15px 10px;
-  border-radius: 0 10px 10px 0;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 main > :nth-child(3) > ul > li > div:nth-child(2) > span {
+  font-weight: 700;
+  display: block;
+  margin: auto;
+  padding: 18px 15px 0 15px;
+}
+main > :nth-child(3) > ul > li > div:nth-child(2) > div {
+  display: flex;
+  background-color: #99e2d0;
+  width: 0;
+  height: 100%;
+  text-align: center;
+}
+main > :nth-child(3) > ul > li > div:nth-child(2) > div > span {
   transform: rotate(-180deg);
-  align-self: center;
   background-color: white;
   color: #99e2d0;
   border-radius: 30px;
   padding: 5px;
+  align-self: center;
+  margin: auto;
 }
 main > :nth-child(3) > ul > li:hover {
   transition: all 1s ease;
 }
-main > :nth-child(3) > ul > li:hover > div:nth-child(2) {
-  animation: checked 1s ease forwards;
+main > :nth-child(3) > ul > li:hover > div:nth-child(2) > div {
+  width: 40px;
+  transition-duration: 1s;
 }
-main > :nth-child(3) > ul > li:hover > div:nth-child(2) > span {
+main > :nth-child(3) > ul > li:hover > div:nth-child(2) > div > span {
   transform: rotate(0);
   transition-duration: 0.8s;
 }
@@ -386,6 +457,9 @@ main > :nth-child(4) > ul {
 }
 main > :nth-child(4) > ul > li {
   display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
   font-size: 12px;
@@ -393,7 +467,6 @@ main > :nth-child(4) > ul > li {
   margin-bottom: 10px;
   opacity: 0;
   overflow: hidden;
-  flex-wrap: nowrap;
   box-shadow: 0px 5px 20px 0px #dddddd;
 }
 main > :nth-child(4) > ul > li:nth-child(1) {
@@ -406,48 +479,59 @@ main > :nth-child(4) > ul > li:nth-child(3) {
   animation: li 0.6s 0.6s linear forwards;
 }
 main > :nth-child(4) > ul > li > div:nth-child(1) {
-  width: 100%;
-  padding: 10px 30px 10px 20px;
+  padding-left: 15px;
+  overflow: hidden;
+  width: 90%;
 }
 main > :nth-child(4) > ul > li > div:nth-child(1) > h3 {
   font-weight: 700;
-}
-main > :nth-child(4) > ul > li > div:nth-child(1) > div {
-  display: flex;
-  justify-content: space-between;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  width: 100%;
 }
-main > :nth-child(4) > ul > li > div:nth-child(1) > div > p {
+main > :nth-child(4) > ul > li > div:nth-child(1) > p {
   text-overflow: ellipsis;
   overflow: hidden;
-}
-main > :nth-child(4) > ul > li > div:nth-child(1) > div > span {
-  font-weight: 700;
+  white-space: nowrap;
+  width: 100%;
 }
 main > :nth-child(4) > ul > li > div:nth-child(2) {
-  margin-right: -42px;
-  background-color: #99e2d0;
   display: flex;
-  padding: 15px 10px 15px 10px;
-  border-radius: 0 10px 10px 0;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 main > :nth-child(4) > ul > li > div:nth-child(2) > span {
+  font-weight: 700;
+  display: block;
+  margin: auto;
+  padding: 18px 15px 0 15px;
+}
+main > :nth-child(4) > ul > li > div:nth-child(2) > div {
+  display: flex;
+  background-color: #99e2d0;
+  width: 0;
+  height: 100%;
+  text-align: center;
+}
+main > :nth-child(4) > ul > li > div:nth-child(2) > div > span {
   transform: rotate(-180deg);
-  align-self: center;
   background-color: white;
   color: #99e2d0;
   border-radius: 30px;
   padding: 5px;
+  align-self: center;
+  margin: auto;
 }
 main > :nth-child(4) > ul > li:hover {
   transition: all 1s ease;
 }
-main > :nth-child(4) > ul > li:hover > div:nth-child(2) {
-  animation: checked 1s ease forwards;
+main > :nth-child(4) > ul > li:hover > div:nth-child(2) > div {
+  width: 40px;
+  transition-duration: 1s;
 }
-main > :nth-child(4) > ul > li:hover > div:nth-child(2) > span {
+main > :nth-child(4) > ul > li:hover > div:nth-child(2) > div > span {
   transform: rotate(0);
   transition-duration: 0.8s;
 }
@@ -471,6 +555,76 @@ main > a {
 }
 main > a:hover {
   box-shadow: inset -10px -10px 20px 10px #a25bdc, 0px 5px 10px 0px #313131;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 200px;
+    max-width: 768px;
+  }
+  header > :nth-child(2) {
+    padding-left: 280px;
+  }
+  header > :nth-child(3) {
+    width: 768px;
+    height: 200px;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 768px;
+  }
+  main > h1 {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 20px;
+    width: 710px;
+  }
+  main > section {
+    width: 245px;
+  }
+  main > a {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  footer {
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  header {
+    max-width: 1440px;
+    height: 300px;
+  }
+  header > :nth-child(2) {
+    padding-left: 600px;
+  }
+  header > :nth-child(3) {
+    width: 1440px;
+    height: 300px;
+  }
+  main {
+    max-width: 1440px;
+  }
+  main > h1 {
+    width: 100%;
+    align-items: center;
+  }
+  main > h1 > span {
+    padding-right: 1100px;
+    padding-left: 0;
+  }
+  main > section {
+    width: 400px;
+    margin: auto;
+    margin-right: 50px;
+  }
+  footer {
+    max-width: 1440px;
+  }
 }
 
 /*# sourceMappingURL=francaise.css.map */
