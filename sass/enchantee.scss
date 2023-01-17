@@ -20,12 +20,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
+body{
+    min-width: 320px;
+    margin: auto;
+}
 
 header{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     height: 215px;
+    margin-top: -100vh;
     &>a{
         cursor: pointer;
         margin: 10px 5%;
@@ -48,7 +53,7 @@ header{
 }
 
 main{
-    background-color: white;
+    background-color: $cloudy;
     position: relative;
     padding: 20px 10px ;
     border-radius: 30px 30px 0 0;
@@ -432,7 +437,6 @@ main{
         align-items: center;
         height: 200px;
         width: 100%;
-        max-width: 1440px;
         &>:nth-child(2){
             padding: 10px 0 10px 30%;
         }
@@ -461,7 +465,6 @@ main{
 @media screen and (min-width: 1024px){
 
     header{
-        max-width: 1440px;
         height: 300px;
         &>:nth-child(2){
             padding: 10px 0 10px 35%;
@@ -473,6 +476,8 @@ main{
 
     main{
         max-width: 1440px;
+        margin: auto;
+        height: 600px;
         &>h1{
             width: 100%;
             align-items: center;
@@ -483,10 +488,8 @@ main{
         &>section{
             width: 31%;
         }
+        &>a{
+            height: 20px;
+        }
     }
-
-    footer{
-        max-width: 1440px;
-    }
-
 }

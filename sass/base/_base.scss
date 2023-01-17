@@ -5,14 +5,15 @@
     font-family: 'Shrikhand';
     color: black;
     font-weight: 700;
-    position: absolute;
+    position: sticky;
     display: grid;
     place-items: center;
     background-color: #ffffff;
     height: 100vh;
     inset: 0;
     z-index: 2;
-    opacity: 0.9;
+    opacity: 1;
+    transform-origin: top;
     animation: loader1 200ms 3s forwards;
     &::after{
         content: '';
@@ -32,7 +33,6 @@ body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
     min-width: 320px;
-    max-width: 1440px;
 }
 
 h1{
